@@ -1,5 +1,6 @@
 const User = require("../models/User")
 const Business = require("../models/Business")
+const db = require('../../db')
 
 exports.add = (req, res) => {
     let newUser = new User({
@@ -38,23 +39,40 @@ exports.add = (req, res) => {
 //         })
 // };
 
+exports.getFavoriteBusinesses = (req, res) => {
+    Business.find().exec((err, results) => {
+        if (err) {
+            res.send('error getting favorite businesses')
+        } else {
+            res.send(results);
+        }
+    })
+}
+
 exports.addUserLikes = (req, res) => {
+    const filter = { businessAddress: req.body.businessAddress }
+    const options = {
+        upsert: true
+    }
     let newBusiness = new Business({
-        id: req.business.id,
-        businessName: req.business.name,
-        date: Date.now,
-        meta: { favs: 0 }
+        businessName: req.body.businessName,
+        businessPic: req.body.businessPic,
+        businessAddress: req.body.businessAddress
     })
 
-    User.update({ id: req.userID }, { $push: { likedBusinesses: newBusiness }})
-
-    User.save(err => {
+    // DONT LET USER ADD DUPLICATE
+    newBusiness.save(err => {
         if (err) {
-            console.log('error adding to liked businesses for user')
+            console.log('error adding to liked businesses for user', err)
         } else {
             console.log('added to liked businesses for user in DB')
         }
     })
+
+// somehow grab user id or username from the current session
+    // User.update({ id: req.userID }, { $push: { likedBusinesses: newBusiness }})
+
+
 }
 
 // exports.deleteUserLikes = (req, res) => {

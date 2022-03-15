@@ -13,11 +13,10 @@ async function loginUser(credentials) {
     body: JSON.stringify(credentials)
   })
     .then(data => data.json())
- }
+}
 
 export default function Login({ setToken }) {
   const [username, setUserName] = useState();
-  // const [password, setPassword] = useState();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -38,20 +37,19 @@ export default function Login({ setToken }) {
   return (
     <div className="login-wrapper">
       <h1>What's your name?</h1>
-    <form onSubmit={handleSubmit}>
-      <label>
-        <p>Username</p>
-        <input type="text" onChange={e => setUserName(e.target.value)}/>
-      </label>
-      {/* <label>
-        <p>Password</p>
-        <input type="password" onChange={e => setPassword(e.target.value)}/>
-      </label> */}
-      <div>
-        {/* <button type="submit">Submit</button> */}
-        <ColorButton variant="contained" type="submit">Next</ColorButton>
-      </div>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <Stack spacing={2} direction="column">
+          <TextField
+            color={'error'}
+            label="Name"
+            id="custom-css-outlined-input"
+            required
+            onChange={(e) => setUserName(e.target.value)} />
+          <ColorButton variant="contained" type="submit">Next</ColorButton>
+        </Stack>
+        <div>
+        </div>
+      </form>
     </div>
   )
 }

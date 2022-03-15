@@ -16,7 +16,7 @@ const RandomPlace = ({ zipCode, category }) => {
 
   const getRandomPlace = async () => {
     try {
-      axios.get('http://localhost:3001/api',
+      await axios.get('http://localhost:3001/api',
       {
         params: {location: zipCode, categories: category},
       }).then(res => {
@@ -31,6 +31,16 @@ const RandomPlace = ({ zipCode, category }) => {
     catch (err) {
       console.log('Error getting random business')
     }
+  }
+
+  const addToFavorites = () => {
+    axios.post('http://localhost:3001/favorites', {
+      businessName, businessPic, businessAddress
+    }).then(res => {
+      console.log('Added to favorites')
+    }).catch(err => {
+      console.log('Error adding to favorites')
+    })
   }
 
   const ColorButton = styled(Button)(({ theme }) => ({
@@ -48,6 +58,7 @@ const RandomPlace = ({ zipCode, category }) => {
       <img src={businessPic} alt={businessName}></img>
       </div>
       <ColorButton variant="contained" onClick={getRandomPlace}>Randomize</ColorButton>
+      <ColorButton variant="contained" onClick={addToFavorites}>Add to Favorites</ColorButton>
     </div>
 
   )

@@ -21,7 +21,7 @@
   > Type in your zipcode and the type of food you want to eat.
 
 ## Customer Quote ##
-  > "This app is amazing! I always ask my girlfriend where to eat and she always says, "I don't know, you choose!" When I do choose, we can never agree on it and ever since we found this app, we don't have that problem anymore!"
+  > "This app is amazing! I always ask my girlfriend where to eat and she always says, "I don't know, you choose!" When I do choose, we can never agree on it and ever since we found this app, it saved our relationship!"
 
 ## Closing and Call to Action ##
   > Setup the app!
