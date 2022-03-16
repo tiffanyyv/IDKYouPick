@@ -77,37 +77,40 @@ const Forms = () => {
 
   return (
     <div>
-      {showFavs && <Favorites favs={favs}/>}
-      {showFavButton && <ColorButton variant="contained" onClick={getFavorites}>Favorites</ColorButton>}
+      <Stack spacing={2} direction="row" justifyContent="center">
+        {!firstForm && !secondForm && <ColorButton variant="contained" onClick={exitFavorites}>Home</ColorButton>}
+        {showFavButton && <ColorButton variant="contained" onClick={getFavorites}>Favorites</ColorButton>}
+      </Stack>
+      {showFavs && <Favorites favs={favs} />}
 
-      {!firstForm && !secondForm && <ColorButton variant="contained" onClick={exitFavorites}>Home</ColorButton>}
+      <div className="forms">
+        {firstForm &&
+          <div>
+            <h1>Where are you located?</h1>
+            <Stack spacing={2} direction="column">
+              <TextField
+                color={'error'}
+                label="Zipcode"
+                id="custom-css-outlined-input"
+                required
+                onChange={(e) => setZipCode(e.target.value)} />
+              <ColorButton variant="contained" onClick={handleZipCodeSubmit}>Next</ColorButton>
+            </Stack>
+          </div>}
 
-      {firstForm &&
-        <div>
-          <h1>Where are you located?</h1>
+        {secondForm && <div>
+          <h1>What type of food are you feeling?</h1>
           <Stack spacing={2} direction="column">
             <TextField
               color={'error'}
-              label="Zipcode"
+              label="Category"
               id="custom-css-outlined-input"
               required
-              onChange={(e) => setZipCode(e.target.value)} />
-            <ColorButton variant="contained" onClick={handleZipCodeSubmit}>Next</ColorButton>
+              onChange={(e) => setCategory(e.target.value)} />
+            <ColorButton variant="contained" onClick={handleCategorySubmit}>Next</ColorButton>
           </Stack>
         </div>}
-
-      {secondForm && <div>
-        <h1>What type of food are you feeling?</h1>
-        <Stack spacing={2} direction="column">
-          <TextField
-            color={'error'}
-            label="Category"
-            id="custom-css-outlined-input"
-            required
-            onChange={(e) => setCategory(e.target.value)} />
-          <ColorButton variant="contained" onClick={handleCategorySubmit}>Next</ColorButton>
-        </Stack>
-      </div>}
+      </div>
 
       {showPlace && <RandomPlace zipCode={zipCode} category={category} />}
     </div>

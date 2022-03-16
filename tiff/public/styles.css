@@ -1,5 +1,5 @@
 body {
-  margin: 1;
+  /* margin: 1; */
   font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -7,17 +7,38 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #ededed;
   color: #121212;
-  justify-content: center;
-}
-
-.wrapper {
-  padding: 20px;
-}
-
-.login-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: auto;
+}
+
+.wrapper {
+  /* padding: 20px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-height: 100vh;
+}
+
+.login-wrapper, .random-place, .business-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.business-pic {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.random-place-buttons {
+  padding: 2vh;
+}
+
+@media (min-width: 960px) {
+  body, .business-pic {
+    display: flex;
+  }
 }
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
