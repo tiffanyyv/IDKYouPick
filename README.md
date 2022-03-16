@@ -1,4 +1,4 @@
-# IDK, You Choose
+# IDK, You Pick
 
 ## Yelp Food Business Randomizer ##
 
@@ -9,7 +9,7 @@
   > If you and/or anyone you know has a hard time picking a place to eat/drink, this app is for you! Enter in your zipcode and type of cuisine you're feeling and it will show you a random place to eat/drink at.
 
 ## Problem ##
-  > This product intends to solve the age-old question: "Where do you want to eat?" In which your friends/spouse will typically answer, "I don't know, you choose."
+  > This product intends to solve the age-old question: "Where do you want to eat?" In which your friends/spouse will typically answer, "I don't know, you pick."
 
 ## Solution ##
   > This product will show you a completely random food/drink place based on the zipcode and type of cuisine you put in.
@@ -21,7 +21,7 @@
   > Type in your zipcode and the type of food you want to eat.
 
 ## Customer Quote ##
-  > "This app is amazing! Whenever I ask my girlfriend where to eat, she always says, "I don't know, you choose!" When I do choose, we can never agree on it and ever since we found this app, it saved our relationship!"
+  > "This app is amazing! Whenever I ask my girlfriend where to eat, she always says, "I don't know, you pick!" When I do choose, we can never agree on it and ever since we found this app, it saved our relationship!"
 
 ## Closing and Call to Action ##
   > Setup the app!

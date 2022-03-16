@@ -23,11 +23,14 @@ app.use('/login', (req, res) => {
 })
 
 app.post('/favorites', (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   addUserLikes(req, res)
 })
 
-app.get('/favorites', getFavoriteBusinesses)
+// app.get('/favorites', getFavoriteBusinesses)
+app.get('/favorites', (req, res) => {
+  getFavoriteBusinesses(req, res)
+})
 
 app.get('/api', async (req, res) => {
   try {

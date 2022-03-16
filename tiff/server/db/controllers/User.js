@@ -5,7 +5,7 @@ const db = require('../../db')
 exports.add = (req, res) => {
     let newUser = new User({
         userName: req.body.username,
-        likedBusinesses: '[]',
+        likedBusinesses: [],
     })
 
     newUser.save(err => {
@@ -48,18 +48,34 @@ exports.getFavoriteBusinesses = (req, res) => {
         }
     })
 }
+// exports.getFavoriteBusinesses = (req, res) => {
+//     // console.log(req.query.currentUser)
+//     User.find({ userName: req.query.currentUser }, {likedBusinesses: 1}, {_id:0})
+//     .then(res => console.log(res[0].likedBusinesses))
+//     .catch(err => {
+//         console.log(err)
+//     })
+// }
 
 exports.addUserLikes = (req, res) => {
-    const filter = { businessAddress: req.body.businessAddress }
-    const options = {
-        upsert: true
-    }
+    // console.log(req.body)
+    // const filter = { businessAddress: req.body.businessAddress }
+    // const options = {
+    //     upsert: true
+    // }
     let newBusiness = new Business({
         businessName: req.body.businessName,
         businessPic: req.body.businessPic,
-        businessAddress: req.body.businessAddress
+        businessAddress: req.body.businessAddress,
+        businessYelpURL: req.body.businessYelpURL
     })
 
+    User.updateMany({ userName: req.body.currentUser }, { $push: { likedBusinesses: req.body.businessName }})
+    .then(res => {
+        console.log(res)
+    }).catch(err => {
+        console.log(err)
+    })
     // DONT LET USER ADD DUPLICATE
     newBusiness.save(err => {
         if (err) {
@@ -70,7 +86,6 @@ exports.addUserLikes = (req, res) => {
     })
 
 // somehow grab user id or username from the current session
-    // User.update({ id: req.userID }, { $push: { likedBusinesses: newBusiness }})
 
 
 }

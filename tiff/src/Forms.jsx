@@ -55,9 +55,9 @@ const Forms = () => {
     setFirstForm(false);
     setSecondForm(false);
     setShowPlace(false);
-    axios.get('http://localhost:3001/favorites')
+    axios.get('http://localhost:3001/favorites', { params: {currentUser: localStorage.getItem("user")}})
       .then(results => {
-        console.log(results)
+        console.log(results, 'hi')
         setFavs(results.data)
       }).catch(err => {
         console.log(err)
@@ -113,8 +113,8 @@ const Forms = () => {
           </Stack>
         </div>}
       </div>
-
       {showPlace && <RandomPlace zipCode={zipCode} category={category} />}
+
     </div>
   )
 

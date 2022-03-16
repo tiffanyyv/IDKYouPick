@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const userSchema = new Schema({
 // String is shorthand for {type: String}
   userName: String,
-  likedBusinesses: String,
+  likedBusinesses: Array,
 //   body:   String,
   // likedBusinesses: [{ id: String, date: Date, default: Date.now() }],
   // date: { type: Date, default: Date.now },

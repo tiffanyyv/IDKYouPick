@@ -15,6 +15,7 @@ async function loginUser(credentials) {
     .then(data => data.json())
 }
 
+
 export default function Login({ setToken }) {
   const [username, setUserName] = useState();
 
@@ -24,6 +25,7 @@ export default function Login({ setToken }) {
       username
     });
     setToken(token);
+    localStorage.setItem("user", username)
   }
 
   const ColorButton = styled(Button)(({ theme }) => ({

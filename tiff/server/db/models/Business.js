@@ -5,7 +5,8 @@ const businessSchema = new Schema({
   // String is shorthand for {type: String}
   businessName: String,
   businessPic: String,
-  businessAddress: Array
+  businessAddress: Array,
+  businessYelpURL: String
 //   body:   String,
 //   comments: [{ body: String, date: Date, default: Date.now }],
   // date: {
