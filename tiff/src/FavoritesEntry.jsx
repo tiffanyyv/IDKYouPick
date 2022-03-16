@@ -4,7 +4,7 @@ const FavoritesEntry = ({ fav }) => {
 
   return (
     <div className="favorite-entry">
-      <h2>{fav.businessName}</h2>
+      <h3>{fav.businessName}</h3>
     </div>
   )
 }

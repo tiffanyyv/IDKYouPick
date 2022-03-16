@@ -77,16 +77,18 @@ const Forms = () => {
 
   return (
     <div>
+      <div className="random-place-buttons">
       <Stack spacing={2} direction="row" justifyContent="center">
         {!firstForm && !secondForm && <ColorButton variant="contained" onClick={exitFavorites}>Home</ColorButton>}
         {showFavButton && <ColorButton variant="contained" onClick={getFavorites}>Favorites</ColorButton>}
       </Stack>
+      </div>
       {showFavs && <Favorites favs={favs} />}
 
       <div className="forms">
         {firstForm &&
           <div>
-            <h1>Where are you located?</h1>
+            <h2>Where are you located?</h2>
             <Stack spacing={2} direction="column">
               <TextField
                 color={'error'}
@@ -99,7 +101,7 @@ const Forms = () => {
           </div>}
 
         {secondForm && <div>
-          <h1>What type of food are you feeling?</h1>
+          <h2>What type of food are you feeling?</h2>
           <Stack spacing={2} direction="column">
             <TextField
               color={'error'}

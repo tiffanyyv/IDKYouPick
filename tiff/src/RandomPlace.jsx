@@ -51,7 +51,7 @@ const RandomPlace = ({ zipCode, category }) => {
   }));
 
   return (
-    <div className="wrapper">
+    <div className="random-place">
       <div className="business-info">
       <h2>{businessName ? businessName : ''}</h2>
       <h3>{businessAddress ? businessAddress[0] + " " + businessAddress[1] : ''}</h3>
