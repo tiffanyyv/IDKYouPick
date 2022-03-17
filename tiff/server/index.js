@@ -5,7 +5,7 @@ const db = require('./db');
 const cors = require("cors");
 require('dotenv').config();
 const API_KEY = process.env.API_KEY;
-const { add, addUserLikes, getFavoriteBusinesses } = require('../server/db/controllers/User.js')
+const { add, addUserLikes, getFavoriteBusinesses, removeFavoriteBusiness } = require('../server/db/controllers/User.js')
 
 const axios = require('axios');
 
@@ -27,9 +27,14 @@ app.post('/favorites', (req, res) => {
   addUserLikes(req, res)
 })
 
-// app.get('/favorites', getFavoriteBusinesses)
-app.get('/favorites', (req, res) => {
-  getFavoriteBusinesses(req, res)
+app.get('/favorites', getFavoriteBusinesses)
+// app.get('/favorites', (req, res) => {
+//   getFavoriteBusinesses(req, res)
+// })
+
+app.put('/favorites', (req, res) => {
+  // console.log(req)
+  removeFavoriteBusiness(req, res)
 })
 
 app.get('/api', async (req, res) => {

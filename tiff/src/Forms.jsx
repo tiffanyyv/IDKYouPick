@@ -17,6 +17,8 @@ const Forms = () => {
   const [favs, setFavs] = useState([]);
 
 
+
+
   const isValidUSZip = (zipCode) => {
     return /^\d{5}(-\d{4})?$/.test(zipCode);
   }
@@ -51,11 +53,11 @@ const Forms = () => {
     },
   }));
 
-  const getFavorites = () => {
+  const getFavorites = async () => {
     setFirstForm(false);
     setSecondForm(false);
     setShowPlace(false);
-    axios.get('http://localhost:3001/favorites', { params: {currentUser: localStorage.getItem("user")}})
+    await axios.get('http://localhost:3001/favorites', { params: {currentUser: localStorage.getItem("user")}})
       .then(results => {
         console.log(results, 'hi')
         setFavs(results.data)

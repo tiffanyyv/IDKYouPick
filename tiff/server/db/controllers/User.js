@@ -57,6 +57,12 @@ exports.getFavoriteBusinesses = (req, res) => {
 //     })
 // }
 
+exports.removeFavoriteBusiness = (req, res) => {
+    Business.deleteOne({businessName: req.body.params})
+    .then(() => console.log('Removed from favorites'))
+    .catch(err => console.log('Error removing from favorites'))
+}
+
 exports.addUserLikes = (req, res) => {
     // console.log(req.body)
     // const filter = { businessAddress: req.body.businessAddress }
