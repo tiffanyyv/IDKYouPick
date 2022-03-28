@@ -2,16 +2,13 @@ import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { styled } from '@mui/material/styles';
 import { Button, Stack } from '@mui/material';
-import { UserContext } from './App.js';
 
 
 const RandomPlace = ({ zipCode, category }) => {
   const [businessName, setBusinessName] = useState('');
   const [businessPic, setBusinessPic] = useState('');
-  // const [businessRating, setBusinessRating] = useState('');
   const [businessAddress, setBusinessAddress] = useState('');
   const [businessYelpURL, setBusinessYelpURL] = useState('');
-  // const currentUser = useContext(UserContext);
   const currentUser = localStorage.getItem("user")
 
   useEffect(() => {

@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import FavoritesEntry from './FavoritesEntry.jsx';
 
 const Favorites = ({ favs }) => {
@@ -9,7 +8,7 @@ const Favorites = ({ favs }) => {
       {favs.map((fav, idx) => {
         return (
           <div className="favorites-list-entry" key={`favorite-${idx}`}>
-            <FavoritesEntry fav={fav}/>
+            <FavoritesEntry fav={fav} />
           </div>
         )
       })}

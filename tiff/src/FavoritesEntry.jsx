@@ -14,13 +14,12 @@ const FavoritesEntry = ({ fav }) => {
   }, [editedFav])
 
   const removeFromFavorites = async (e) => {
-    await axios.put('http://localhost:3001/favorites', { params: e.target.id}).then(setEditedFav(true))
+    await axios.put('http://localhost:3001/favorites', { params: e.target.id }).then(setEditedFav(true))
   }
 
   const getNewFavorites = async () => {
-    await axios.get('http://localhost:3001/favorites', { params: {currentUser: localStorage.getItem("user")}})
+    await axios.get('http://localhost:3001/favorites', { params: { currentUser: localStorage.getItem("user") } })
       .then(results => {
-        console.log(results, 'hi')
         setNewFavs(results.data)
       }).catch(err => {
         console.log(err)
@@ -31,25 +30,25 @@ const FavoritesEntry = ({ fav }) => {
   return (
     <div>
       {editedFav ?
-      newFavs.forEach(fav => {
-        return (
-          <div className="favorite-entry">
+        newFavs.forEach(fav => {
+          return (
+            <div className="favorite-entry">
+              <Stack direction="row" spacing={1}>
+                <h2><a href={fav.businessYelpURL} target="_blank" rel="noreferrer">{fav.businessName}</a></h2>
+                <IconButton aria-label="delete">
+                  <DeleteIcon id={fav.businessName} onClick={e => removeFromFavorites(e)} />
+                </IconButton>
+              </Stack>
+            </div>
+          )
+        }) : <div className="favorite-entry">
           <Stack direction="row" spacing={1}>
-          <h2><a href={fav.businessYelpURL} target="_blank" rel="noreferrer">{fav.businessName}</a></h2>
-          <IconButton aria-label="delete">
-            <DeleteIcon id={fav.businessName} onClick={e => removeFromFavorites(e)}/>
-          </IconButton>
+            <h2><a href={fav.businessYelpURL} target="_blank" rel="noreferrer">{fav.businessName}</a></h2>
+            <IconButton aria-label="delete">
+              <DeleteIcon id={fav.businessName} onClick={e => removeFromFavorites(e)} />
+            </IconButton>
           </Stack>
-        </div>
-        )
-      }) : <div className="favorite-entry">
-        <Stack direction="row" spacing={1}>
-        <h2><a href={fav.businessYelpURL} target="_blank" rel="noreferrer">{fav.businessName}</a></h2>
-        <IconButton aria-label="delete">
-          <DeleteIcon id={fav.businessName} onClick={e => removeFromFavorites(e)}/>
-        </IconButton>
-        </Stack>
-      </div>}
+        </div>}
     </div>
   )
 }

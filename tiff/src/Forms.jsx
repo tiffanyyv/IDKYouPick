@@ -23,9 +23,9 @@ const Forms = () => {
     return /^\d{5}(-\d{4})?$/.test(zipCode);
   }
 
-  const isValidCategory = (categoryInput) => {
-    return /^[A-Za-z]+$/.test(categoryInput)
-  }
+  // const isValidCategory = (categoryInput) => {
+  //   return /^[A-Za-z]+$/.test(categoryInput)
+  // }
 
   const handleZipCodeSubmit = () => {
     if (isValidUSZip(zipCode)) {
@@ -37,12 +37,14 @@ const Forms = () => {
   }
 
   const handleCategorySubmit = () => {
-    if (isValidCategory(category)) {
-      setSecondForm(false);
+    // if (isValidCategory(category)) {
+    //   setSecondForm(false);
+    //   setShowPlace(true);
+    // } else {
+    //   alert("Please enter a valid category")
+    // }
+    setSecondForm(false);
       setShowPlace(true);
-    } else {
-      alert("Please enter a valid category")
-    }
   }
 
 
