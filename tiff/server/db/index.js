@@ -1,7 +1,5 @@
-//Import the mongoose module
 const mongoose = require('mongoose');
 
-//Set up default mongoose connection
 const mongoURI = 'mongodb://localhost:27017/local';
 mongoose.connect(mongoURI, {useNewUrlParser: true, useUnifiedTopology: true});
 
