@@ -6,7 +6,7 @@
   > Anyone who has a hard time choosing where to eat and/or drink.
 
 ## Summary ##
-  > If you and/or anyone you know has a hard time picking a place to eat/drink, this app is for you! Enter in your zipcode and type of cuisine you're feeling and it will show you a random place to eat/drink at.
+  > If you and/or anyone you know has a hard time picking a place to eat/drink, this app is for you! Enter in your zipcode and type of cuisine you're feeling and it will show you a random place to eat/drink at. You can add/delete businesses to and from your favorites.
 
 ## Problem ##
   > This product intends to solve the age-old question: "Where do you want to eat?" In which your friends/spouse will typically answer, "I don't know, you pick."
