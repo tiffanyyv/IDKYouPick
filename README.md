@@ -24,7 +24,7 @@
   > "This app is amazing! Whenever I ask my girlfriend where to eat, she always says, "I don't know, you pick!" When I do choose, we can never agree on it and ever since we found this app, it saved our relationship!"
 
 ## Closing and Call to Action ##
-  > Setup the app!
+  > Setup the app.
 
 ![IDKYouPick](https://user-images.githubusercontent.com/94875504/160452414-351fffbc-61c7-41bb-b158-0af8d70fb7a3.gif)
 
