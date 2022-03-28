@@ -25,3 +25,8 @@
 
 ## Closing and Call to Action ##
   > Setup the app!
+
+![IDKYouPick](https://user-images.githubusercontent.com/94875504/160452414-351fffbc-61c7-41bb-b158-0af8d70fb7a3.gif)
+
+
+
